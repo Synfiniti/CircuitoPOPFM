@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { View, StyleSheet, Animated, Dimensions, Easing } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import * as SplashScreenExpo from "expo-splash-screen"; // Necesitas importarlo aquí para hideAsync
+import * as SplashScreenExpo from "expo-splash-screen"; 
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -12,17 +12,15 @@ export default function SplashScreen({ onFinishLoading }) {
   const progressAnim = useRef(new Animated.Value(0)).current;
   const shimmerAnim = useRef(new Animated.Value(-100)).current;
 
-  // No necesitamos dynamicSplashReady para controlar hideAsync
-  // Solo lo usaremos para el setTimeout de recursos y la animación de salida.
+  
   const [resourcesLoaded, setResourcesLoaded] = React.useState(false);
 
 
   useEffect(() => {
-    // === Ocultar splash nativo ANTES de tus animaciones de entrada ===
-    // Asegúrate de que esto se llame lo más pronto posible una vez que el JS del splash está cargado.
+    
     SplashScreenExpo.hideAsync();
 
-    // === Animaciones de Entrada ===
+    
     Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 1500,
@@ -32,12 +30,12 @@ export default function SplashScreen({ onFinishLoading }) {
     Animated.timing(progressAnim, {
       toValue: SCREEN_WIDTH * 0.6,
       duration: 4000,
-      useNativeDriver: false, // 'useNativeDriver' no es compatible con 'width'
+      useNativeDriver: false, 
     }).start();
 
     const shimmerLoop = Animated.loop(
       Animated.timing(shimmerAnim, {
-        toValue: SCREEN_WIDTH * 0.6 + 50, // Ajusta toValue para que el shimmer salga completamente
+        toValue: SCREEN_WIDTH * 0.6 + 50, 
         duration: 1500,
         easing: Easing.linear,
         useNativeDriver: true,
@@ -45,10 +43,9 @@ export default function SplashScreen({ onFinishLoading }) {
     );
     shimmerLoop.start();
 
-    // === Carga de Recursos ===
+    
     async function loadAppResources() {
       try {
-        // Tu carga de recursos, aquí se simula con un setTimeout
         await new Promise((r) => setTimeout(r, 3000));
       } catch (e) {
         console.warn("Error cargando recursos en splash:", e);
@@ -62,30 +59,29 @@ export default function SplashScreen({ onFinishLoading }) {
   }, []); // Dependencias vacías para que se ejecute una vez al montar
 
 
-  // === Animación de Salida ===
+  
   useEffect(() => {
     // Este useEffect se dispara cuando los recursos están listos.
     if (!resourcesLoaded) return;
 
     console.log("🔔 Recursos cargados — preparando animación de salida...");
-    // El pequeño setTimeout es para asegurar que la barra de progreso termine
     const timeout = setTimeout(() => {
       Animated.timing(exitAnim, {
         toValue: 0,
-        duration: 700, // Duración de la animación de salida del splash JSX
+        duration: 700, 
         useNativeDriver: true,
       }).start(() => {
         console.log("✅ Animación salida de SplashScreen.jsx completada. Notificando a Layout...");
-        onFinishLoading(); // Notifica a Layout.jsx que el splash JSX ha terminado
+        onFinishLoading(); 
       });
-    }, 200); // Espera un poco para asegurar que las animaciones de entrada hayan avanzado
+    }, 200); 
 
     return () => clearTimeout(timeout);
   }, [resourcesLoaded, onFinishLoading, exitAnim]); // Dependencias
 
   return (
     <Animated.View style={[styles.container, { opacity: exitAnim }]}>
-      {/* ... (el resto de tu renderizado, no hay cambios aquí) */}
+      
       <LinearGradient
         colors={["rgba(169,0,165,1)", "rgba(90,0,92,1)"]}
         style={styles.background}
@@ -129,7 +125,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 100, // Es bueno que tenga un zIndex alto para asegurar que se superponga
+    zIndex: 100, 
   },
   logo: {
     width: 250,
@@ -153,12 +149,11 @@ const styles = StyleSheet.create({
   },
   shimmerOverlay: {
     ...StyleSheet.absoluteFillObject,
-    // Asegúrate de que el shimmer comience fuera del área visible y termine fuera
-    width: '100%', // El ancho del shimmer overlay debe ser el mismo que el progressBar
-    // backgroundColor: 'red', // Para depuración
+    
+    width: '100%', 
   },
   shimmer: {
-    width: 80, // Ancho de la "luz" del shimmer
+    width: 80, 
     height: "100%",
   },
 });
