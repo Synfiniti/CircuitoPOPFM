@@ -12,7 +12,7 @@ import {
 import Orientation from "react-native-orientation-locker";
 import Icon from "react-native-vector-icons/Ionicons";
 
-// Importa Video condicionalmente. Si es web, usa un componente de marcador de posición.
+// Importa Video condicionalmente. 
 let Video;
 if (Platform.OS === "android" || Platform.OS === "ios") {
   Video = require("react-native-video").Video;
@@ -105,7 +105,7 @@ export default function TVScreen() {
         <Video
           ref={videoRef}
           source={{
-            uri: "https://vcp6.myplaytv.com/poptv/poptv/playlist.m3u8",
+            uri: "LINK SOURCE",
           }}
           style={styles.video}
           controls
