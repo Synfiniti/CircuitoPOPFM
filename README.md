@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+# 📱 Circuito Pop FM 105.9 - Mobile App (Radio & TV Streaming)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform mobile application designed, developed, and deployed for **Circuito Pop FM 105.9**, available on both the **Google Play Store** 🤖 and **Apple App Store** 🍏. It offers live access to **radio and television** content through a modern and intuitive user interface.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
 
-   ```bash
-   npm install
-   ```
+### 🎛️ Interactive Home Screen
 
-2. Start the app
+- Quick access to Radio and TV sections.
+- Social media links.
+- A decorative design aligned with the station's visual identity.
 
-   ```bash
-   npx expo start
-   ```
+### 📻 Live Radio Player
 
-In the output, you'll find options to open the app in a
+- Real-time audio streaming.
+- "LIVE" status indicator 🔴 with continuously updated local time ⏱️.
+- Robust loading and connection error handling.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 📺 Live TV Player
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Streaming from `m3u8` playlists.
+- Fullscreen mode with orientation control.
+- Loading and playback error indicators.
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 🛠️ Technologies Used
 
-```bash
-npm run reset-project
-```
+- ⚛️ **React Native Expo**: Cross-platform development with a single codebase.
+- 🗺️ **Expo Router**: File-based navigation for streamlined development.
+- 🔊 **Expo AV**: Audio and video streaming capabilities.
+- 🎬 **react-native-video**: Native video playback with conditional fallback.
+- 🔄 **react-native-orientation-locker**: Orientation control for immersive video experience.
+- ⏳ **expo-splash-screen**: Animated and customizable launch screen.
+- 🔗 **Native APIs**: External linking, real-time local time display, and device features.
+- 🎨 **Figma**: UI design and interactive prototyping.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🚀 Achievements & Contributions
 
-To learn more about developing your project with Expo, look at the following resources:
+- 🎨 Designed the entire interface using **Figma**, then implemented it in **React Native**.
+- 🔧 Solved complex challenges related to real-time audio and video playback, error handling, and performance optimization.
+- 📤 Managed the entire **build and deployment** process for Android and iOS platforms.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📸 Screenshots
 
-Join our community of developers creating universal apps.
+> Add your screenshots inside the `/assets` folder in the repository and replace the example paths below with your actual image paths:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+| Home Screen                       | Live Radio Player                   | Live TV Player                |
+| --------------------------------- | ----------------------------------- | ----------------------------- |
+| ![main](./assets/images/main.jpg) | ![radio](./assets/images/radio.jpg) | ![tv](./assets/images/tv.jpg) |
+
+---
+
+## 📲 Download the App
+
+- ▶️ [Available on Google Play Store](https://lnkd.in/eFY2kt-4)
+- 🍏 [Available on Apple App Store](https://lnkd.in/eDucb64y)
+
+---
+
+## 📩 Contact
+
+Got feedback or suggestions? Feel free to reach out for technical support, improvements, or new feature development.
+
+---
+
+Thanks for visiting the repository! ⭐ If you like this project, consider leaving a star.
