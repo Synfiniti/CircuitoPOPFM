@@ -12,7 +12,7 @@ export default function RadioScreen() {
   const [horaLocal, setHoraLocal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [error, setError] = useState(false); // NUEVO
+  const [error, setError] = useState(false); 
 
   //Visualizer start
   const Visualizer = ({ isPlaying }) => {
